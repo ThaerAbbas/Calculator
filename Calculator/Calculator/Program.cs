@@ -1,30 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Calculator
 {
     internal class Program
     {
-        
+        static void info()
+        {
+
+            Console.WriteLine("Enter the action to be performed");
+            Console.WriteLine("Press 1 for Addition");
+            Console.WriteLine("Press 2 for Subtraction");
+            Console.WriteLine("Press 3 for Multiplication");
+            Console.WriteLine("Press 4 for Division \n");
+
+        }
 
         static void Main(string[] args)
         {
-           
-            
 
-           
+
+
+
             do
             {
+                info();
 
-                Console.WriteLine("Enter the action to be performed");
-                Console.WriteLine("Press 1 for Addition");
-                Console.WriteLine("Press 2 for Subtraction");
-                Console.WriteLine("Press 3 for Multiplication");
-                Console.WriteLine("Press 4 for Division \n");
-              
 
 
                 int action = Convert.ToInt32(Console.ReadLine());
@@ -64,16 +64,16 @@ namespace Calculator
                     case 4:
                         {
                             result = num1 / num2;
-                            if (num1==0 || num2 == 0) 
+                            if (num1 == 0 || num2 == 0)
                             {
                                 Console.WriteLine("Division is not accepted by zero ");
-                            
+
                             }
                             else
                             {
                                 Console.WriteLine("The result is {0}", result);
                             }
-                                
+
                             break;
 
                         }
@@ -89,25 +89,19 @@ namespace Calculator
 
 
 
-                Console.WriteLine("Press 'R' to make new action...");
-                Console.WriteLine("Press 'E' then enter to Shut Down...");
+                Console.WriteLine("Press any key to continue or prees e  then enter to Shut Down...");
 
 
 
             }
-            while (Console.ReadKey().Key ==ConsoleKey.R);
 
 
 
+            while (Console.ReadKey().Key != ConsoleKey.E);
 
 
 
-
-            while (Console.ReadKey().Key != ConsoleKey.E) ;
-            
-
-
-            Console.ReadLine(); 
+            Console.ReadLine();
         }
     }
 }
