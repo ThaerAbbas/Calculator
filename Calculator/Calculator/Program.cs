@@ -63,29 +63,56 @@ namespace Calculator
 
                     case 4:
                         {
-                            result = num1 / num2;
-                            if (num1 == 0 || num2 == 0)
+                            try
                             {
-                                Console.WriteLine("Division is not accepted by zero ");
 
+
+                                result = num1 / num2;
+                                if (num1 == 0 || num2 == 0)
+                                {
+                                    Console.WriteLine("Division is not accepted by zero ");
+
+                                }
+
+                                else
+                                {
+                                    Console.WriteLine((double)num1 / num2);
+
+
+                                }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                Console.WriteLine("The result is {0}", result);
+                                string message = "Division is not accepted by zero ";
+
+                                Console.WriteLine(message);
+
                             }
 
                             break;
 
+
+
+
+
+
+
                         }
+
+
+
+
 
                     default:
                         Console.WriteLine("Wrong action!! try again");
+
                         break;
 
 
 
 
                 }
+
 
 
 
