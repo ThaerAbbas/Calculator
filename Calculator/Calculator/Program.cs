@@ -29,106 +29,121 @@ namespace Calculator
 
                 int action = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter 1st num");
-                int num1 = Convert.ToInt32(Console.ReadLine());
+                double num1 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter 2nd num");
-                int num2 = Convert.ToInt32(Console.ReadLine());
-                int result = 0;
+                double num2 = Convert.ToInt32(Console.ReadLine());
+                double result = 0;
 
                 switch (action)
                 {
 
                     case 1:
                         {
-                            result = num1 + num2;
-                            Console.WriteLine("The result is {0}", result);
+                            addition(num1, num2, result);
+
                             break;
 
                         }
 
                     case 2:
                         {
-                            result = num1 - num2;
-                            Console.WriteLine("The result is {0}", result);
+                            subtraction(num1, num2, result);
+
+
                             break;
 
                         }
 
                     case 3:
                         {
-                            result = num1 * num2;
-                            Console.WriteLine("The result is {0}", result);
+                            multiplication(num1, num2, result);
+
                             break;
 
                         }
 
                     case 4:
                         {
-                            try
-                            {
-
-
-                                result = num1 / num2;
-                                if (num1 == 0 || num2 == 0)
-                                {
-                                    Console.WriteLine("Division is not accepted by zero ");
-
-                                }
-
-                                else
-                                {
-                                    Console.WriteLine((double)num1 / num2);
-
-
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                string message = "Division is not accepted by zero ";
-
-                                Console.WriteLine(message);
-
-                            }
+                            division(num1, num2, result);
 
                             break;
 
-
-
-
-
-
-
                         }
-
-
-
-
 
                     default:
                         Console.WriteLine("Wrong action!! try again");
 
                         break;
 
-
-
-
                 }
-
-
 
 
                 Console.WriteLine("Press any key to continue or prees e  then enter to Shut Down...");
 
 
+            }
 
+            while (Console.ReadKey().Key != ConsoleKey.E);
+            Console.ReadLine();
+
+            //  Addition 
+            void addition(double num1, double num2, double result)
+            {
+
+                result = num1 + num2;
+                Console.WriteLine("The result is {0}", result);
+            }
+
+            //  Subtraction
+            void subtraction(double num1, double num2, double result)
+            {
+
+                result = num1 - num2;
+                Console.WriteLine("The result is {0}", result);
             }
 
 
+            //  Multiplication
+            void multiplication(double num1, double num2, double result)
+            {
 
-            while (Console.ReadKey().Key != ConsoleKey.E);
+                result = num1 * num2;
+                Console.WriteLine("The result is {0}", result);
+
+            }
+
+            // Division
+            void division(double num1, double num2, double result)
+            {
 
 
+                try
+                {
 
-            Console.ReadLine();
+
+                    result = num1 / num2;
+                    if (num1 == 0 || num2 == 0)
+                    {
+                        Console.WriteLine("Division is not accepted by zero ");
+
+                    }
+
+                    else
+                    {
+                        Console.WriteLine(num1 / num2);
+
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    string message = "Division is not accepted by zero ";
+
+                    Console.WriteLine(message);
+
+                }
+            }
+
         }
     }
 }
